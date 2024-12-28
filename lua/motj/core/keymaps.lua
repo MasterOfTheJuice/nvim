@@ -16,8 +16,8 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- keymap.set("n", "x", '"_x')
 
 -- Set key mappings for saving the buffer in normal mode and insert mode
-vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save buffer" })
-vim.keymap.set("i", "<C-s>", "<ESC>:w<CR>a", { desc = "Save buffer" })
+vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true, silent = true, desc = "Save buffer" })
+vim.keymap.set("i", "<C-s>", "<ESC>:w<CR>a", { noremap = true, silent = true, desc = "Save buffer" })
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
