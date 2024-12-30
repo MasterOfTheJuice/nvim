@@ -16,29 +16,18 @@ return {
 				terminalColors = true, -- define vim.g.terminal_color_{0,17}
 				colors = { -- add/modify theme and palette colors
 					palette = {},
-					theme = {
-						wave = { ui = { bg = "#0c0c0f", bg_gutter = "none" } },
-						lotus = {},
-						dragon = {},
-						all = {},
-					},
+					theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
 				},
 				overrides = function(colors) -- add/modify highlights
-					local theme = colors.theme
-					return {
-						NormalFloat = { bg = "none", blend = vim.o.winblend },
-						FloatBorder = { bg = "none" },
-						FloatTitle = { bg = "none" },
-						NormalDark = { fg = theme.ui.fg_dim, bg = "none" },
-					}
+					return {}
 				end,
-				theme = "dragon", -- Load "wave" theme when 'background' option is not set
+				theme = "wave", -- Load "wave" theme when 'background' option is not set
 				background = { -- map the value of 'background' option to a theme
-					dark = "wave", -- try "dragon" !
+					dark = "dragon", -- try "dragon" !
 					light = "lotus",
 				},
 			})
-			vim.cmd("colorscheme kanagawa")
+			vim.cmd([[colorscheme onedark]])
 		end,
 	},
 }

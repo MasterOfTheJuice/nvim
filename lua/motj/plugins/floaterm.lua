@@ -9,7 +9,7 @@ return {
 		vim.g.floaterm_width = 0.6 -- 80% of screen width
 		vim.g.floaterm_height = 0.8 -- 80% of screen height
 		vim.g.floaterm_wintype = "float" -- Floating window type
-		vim.g.floaterm_autoclose = 0 -- Automatically close terminal when process exits
+		vim.g.floaterm_autoclose = 1 -- Automatically close terminal when process exits
 
 		-- Key mappings for Floaterm
 		vim.keymap.set("n", "<F12>", ":FloatermToggle<CR>", { desc = "Toggle Floaterm" })
@@ -26,5 +26,7 @@ return {
 
 		-- Optional: Set default shell for Floaterm
 		vim.g.floaterm_shell = vim.fn.executable("zsh") == 1 and "zsh" or "bash"
+		vim.o.winblend = 10
+		vim.cmd([[autocmd User FloatermOpen setlocal winhighlight=Normal:NormalDark]])
 	end,
 }
