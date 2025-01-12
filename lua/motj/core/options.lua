@@ -8,7 +8,7 @@ local opt = vim.opt -- for conciseness
 -- general
 opt.confirm = true -- prompt instead of failing
 opt.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions" -- ensure filetype and highlighting work correctly after a session is restored.
-
+opt.updatetime = 100
 
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
