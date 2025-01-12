@@ -44,6 +44,6 @@ return {
             })
           -- load the colorscheme here
           vim.cmd([[colorscheme onedark]])
-        end,                
+        end,
     },
 }

@@ -16,7 +16,7 @@ return {
 				-- window config
 				window = {
 					style = "minimal",
-					relative = "win",
+					relative = "editor",
 					border = "rounded",
 					wrap = false,
 				},
