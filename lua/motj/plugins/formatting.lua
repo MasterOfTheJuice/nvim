@@ -20,6 +20,7 @@ return {
 				liquid = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
+        groovy = { "npm-groovy-lint" },
 			},
 			-- format_on_save = {
 			--   lsp_fallback = true,

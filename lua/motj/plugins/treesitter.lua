@@ -30,6 +30,7 @@ return {
         "html",
         "css",
         "prisma",
+        "python",
         "markdown",
         "markdown_inline",
         "svelte",

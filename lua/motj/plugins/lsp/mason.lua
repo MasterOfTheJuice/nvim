@@ -36,7 +36,7 @@ return {
 				"docker_compose_language_service",
 				"jinja_lsp",
 				"jsonls",
-				"terraformls",
+				"groovyls",
 				"yamlls",
 			},
 		})
@@ -49,6 +49,7 @@ return {
 				"black", -- python formatter
 				"pylint", -- python linter
 				"eslint_d", -- js linter
+        "npm-groovy-lint", -- groovy linter
 			},
 		})
 	end,

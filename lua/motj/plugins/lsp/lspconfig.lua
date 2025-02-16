@@ -100,6 +100,35 @@ return {
 					end,
 				})
 			end,
+			["pyright"] = function()
+				local function get_python_path()
+					-- Use activated virtualenv.
+					if vim.env.VIRTUAL_ENV then
+						return table.concat({ vim.env.VIRTUAL_ENV, "/bin/python" })
+					end
+					-- Fallback to system Python.
+					return "/usr/bin/python3"
+				end
+				lspconfig["pyright"].setup({
+					capabilities = capabilities,
+					settings = {
+						python = {
+							-- Use the locally available python executable. Enables using pyright from an activated venv.
+							pythonPath = get_python_path(),
+						},
+					},
+				})
+			end,
+			["groovyls"] = function()
+				lspconfig["groovyls"].setup({
+					capabilities = capabilities,
+					cmd = {
+						"java",
+						"-jar",
+						"/home/motj/.local/share/nvim/mason/packages/groovy-language-server/build/libs/groovy-language-server-all.jar",
+					},
+				})
+			end,
 			["graphql"] = function()
 				-- configure graphql language server
 				lspconfig["graphql"].setup({
@@ -118,20 +147,20 @@ return {
 								url = "",
 							},
 							schemas = {
-                ['https://json.schemastore.org/kustomization.json'] = 'kustomization.{yml,yaml}',
-                ['https://raw.githubusercontent.com/docker/compose/master/compose/config/compose_spec.json'] = 'docker-compose*.{yml,yaml}',
-              }
-            },
+								["https://json.schemastore.org/kustomization.json"] = "kustomization.{yml,yaml}",
+								["https://raw.githubusercontent.com/docker/compose/master/compose/config/compose_spec.json"] = "docker-compose*.{yml,yaml}",
+							},
+						},
 					},
 				})
 			end,
-			-- ["jinja_lsp"] = function()
-			--   -- configure jinja_lsp language server
-			--   lspconfig["jinja_lsp"].setup({
-			--     capabilities = capabilities,
-			--     filetypes = { "jinja2", "jinja" },
-			--   })
-			-- end,
+			["jinja_lsp"] = function()
+			  -- configure jinja_lsp language server
+			  lspconfig["jinja_lsp"].setup({
+			    capabilities = capabilities,
+			    filetypes = { "jinja2", "jinja" },
+			  })
+			end,
 			["emmet_ls"] = function()
 				-- configure emmet language server
 				lspconfig["emmet_ls"].setup({

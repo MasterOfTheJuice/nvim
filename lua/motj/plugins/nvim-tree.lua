@@ -8,7 +8,7 @@ return {
 			-- default
 			opts = {
 				-- Whether the float preview is enabled by default. When set to false, it has to be "toggled" on.
-				toggled_on = true,
+				toggled_on = false,
 				-- wrap nvimtree commands
 				wrap_nvimtree_commands = true,
 				-- lines for scroll
